@@ -4,11 +4,25 @@
   "description": "NodeJS API with Clean Architecture, TypeScript and TDD for study purposes.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest"
+  },
+  "lint-staged": {
+    "*.js": [
+      "standard --fix",
+      "git add"
+    ]
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
   },
   "author": "djunior97 <djjunior1997@hotmail.com>",
   "license": "ISC",
   "devDependencies": {
+    "husky": "^4.0.0-beta.5",
+    "jest": "^25.1.0",
+    "lint-staged": "^10.0.3",
     "standard": "^14.3.1"
   }
 }
